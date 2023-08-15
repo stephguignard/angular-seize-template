@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {WindowService} from "../../../../core/window/window.service";
 
 @Component({
   selector: 'app-books',
@@ -9,5 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./books.component.less']
 })
 export class BooksComponent {
+
+  constructor(public windows:WindowService) {
+  }
+
+  openUrl(){
+    this.windows.getInstance().open('https://www.google.ch');
+  }
 
 }
