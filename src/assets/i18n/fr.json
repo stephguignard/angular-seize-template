@@ -1,0 +1,4 @@
+{
+  "HELLO": "salut {{value}}",
+  "MOVIES": "Film"
+}
