@@ -1,21 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SharedCmpComponent } from './shared-cmp.component';
+import {MockBuilder, MockRender} from "ng-mocks";
 
 describe('SharedCmpComponent', () => {
-  let component: SharedCmpComponent;
-  let fixture: ComponentFixture<SharedCmpComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [SharedCmpComponent]
-    });
-    fixture = TestBed.createComponent(SharedCmpComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(() => MockBuilder(SharedCmpComponent));
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = MockRender(SharedCmpComponent);
+    fixture.detectChanges();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 });
