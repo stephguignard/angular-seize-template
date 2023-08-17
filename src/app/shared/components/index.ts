@@ -1,7 +1,4 @@
-import { Provider } from "@angular/core";
-import { SharedCmpComponent } from "./shared-cmp/shared-cmp.component";
+import { Provider } from '@angular/core';
+import { SharedCmpComponent } from './shared-cmp/shared-cmp.component';
 
-
-export const COMMON_COMPONENTS: Provider[] = [
-  SharedCmpComponent,
-];
+export const COMMON_COMPONENTS: Provider[] = [SharedCmpComponent];

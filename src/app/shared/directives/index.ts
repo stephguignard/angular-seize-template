@@ -1,7 +1,4 @@
-import { Provider } from "@angular/core";
-import { NgIf,NgFor } from "@angular/common";
+import { NgFor, NgIf } from '@angular/common';
+import { Provider } from '@angular/core';
 
-export const COMMON_DIRECTIVES: Provider[] = [
-  NgFor,
-  NgIf,
-];
+export const COMMON_DIRECTIVES: Provider[] = [NgFor, NgIf];

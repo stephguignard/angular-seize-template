@@ -1,10 +1,9 @@
-import { Routes } from "@angular/router";
-import {MoviesComponent} from "./pages/movies/movies.component";
+import { Routes } from '@angular/router';
+import { MoviesComponent } from './pages/movies/movies.component';
 
-
-export const  MOVIES_ROUTES: Routes = [
+export const MOVIES_ROUTES: Routes = [
   {
     path: '',
-    component : MoviesComponent
-  }
-]
+    component: MoviesComponent,
+  },
+];

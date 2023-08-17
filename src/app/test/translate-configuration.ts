@@ -1,7 +1,7 @@
+import { NgModule } from '@angular/core';
 import { getTestBed } from '@angular/core/testing';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
-import { NgModule } from '@angular/core';
 
 /**
  * Fichier de traduction
