@@ -3,6 +3,7 @@ import { getTestBed } from '@angular/core/testing';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 
+/* eslint-disable */
 /**
  * Fichier de traduction
  */
@@ -49,3 +50,4 @@ export function setTranslateLang(lang: string): any {
 }
 
 export class TranslateConfiguration {}
+/* eslint-enable */

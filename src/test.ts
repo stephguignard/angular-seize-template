@@ -1,7 +1,7 @@
 // All methods in mock declarations and providers
+import { ngMocks } from 'ng-mocks';
 // will be automatically spied on their creation.
 // https://ng-mocks.sudo.eu/extra/auto-spy
-import {EMPTY} from "rxjs";
 
 ngMocks.autoSpy('jasmine'); // or jest
 
@@ -9,7 +9,7 @@ ngMocks.autoSpy('jasmine'); // or jest
 // globally. Therefore, we can avoid copy-pasting
 // among tests.
 // https://ng-mocks.sudo.eu/api/ngMocks/defaultMock
-ngMocks.defaultMock(AuthService, () => ({
-  isLoggedIn$: EMPTY,
-  currentUser$: EMPTY,
-}));
+// ngMocks.defaultMock(AuthService, () => ({
+//   isLoggedIn$: EMPTY,
+//   currentUser$: EMPTY,
+// }));
