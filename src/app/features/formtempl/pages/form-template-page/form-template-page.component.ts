@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 export class Hero {
   constructor(
@@ -42,7 +42,7 @@ export class FormTemplatePageComponent {
 
   // Reveal in html:
   //   Name via form.controls = {{showFormControls(heroForm)}}
-  showFormControls(form: any) {
-    return form && form.controls.name && form.controls.name.value; // Dr. IQ
+  showFormControls(form: NgForm) {
+    return form && form.controls['name'] && form.controls['name'].value;
   }
 }

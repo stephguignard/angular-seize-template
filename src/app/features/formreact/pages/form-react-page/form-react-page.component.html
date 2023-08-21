@@ -1,9 +1,12 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
   <label for="first-name">First Name: </label>
   <input id="first-name" type="text" formControlName="firstName" required />
 
   <label for="last-name">Last Name: </label>
   <input id="last-name" type="text" formControlName="lastName" />
+
+  <label for="last-name">Age: </label>
+  <input id="age" type="text" formControlName="age" />
 
   <div formGroupName="address">
     <h2>Address</h2>
@@ -33,13 +36,13 @@
   </div>
 
   <p>Complete the form to enable button.</p>
-  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  <button type="submit" [disabled]="!personalForm.valid">Submit</button>
 </form>
 
 <hr />
 
-<p>Form Value: {{ profileForm.value | json }}</p>
+<p>Form Value: {{ personalForm.value | json }}</p>
 
-<p>Form Status: {{ profileForm.status }}</p>
+<p>Form Status: {{ personalForm.status }}</p>
 
 <button type="button" (click)="updateProfile()">Update Profile</button>
