@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { PersonalInfoForm, PersonalInfoFormService } from '../../services/personal-info-form.service';
+import { PersonalInfoForm, PersonalInfoFormData, PersonalInfoFormService } from '../../services/personal-info-form.service';
 
 @Component({
   selector: 'app-form-react-page',
@@ -40,5 +40,8 @@ export class FormReactPageComponent {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.personalForm.value);
+
+    const tata: PersonalInfoFormData = this.personalForm.getRawValue();
+    console.log(tata);
   }
 }

@@ -25,13 +25,11 @@ export class PersonalInfoFormService {
 
   // public formDataToPersonalInfo(formData: Partial<PersonalInfoFormData>): PersonalInfoForm {
   //   return {
-  //     firstname : formData.firstName
+  //     firstname: formData.firstName,
   //   };
   // }
   //
   // public personalInfoToFormData(filter: PersonalInfoForm): PersonalInfoFormData {
-  //   return {
-  //
-  //   };
-  // }
+  //   return {};
+  //}
 }

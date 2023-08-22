@@ -22,6 +22,10 @@ export const APP_ROUTES: Routes = [
         loadComponent: () =>
           import('./features/formtempl/pages/form-template-page/form-template-page.component').then((c) => c.FormTemplatePageComponent),
       },
+      {
+        path: 'signal',
+        loadChildren: () => import('./features/signal/signal.routes').then((r) => r.SIGNAL_ROUTE),
+      },
     ],
   },
 ];
