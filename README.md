@@ -101,3 +101,59 @@ et peuvent être importés dans n'importe quel module de fonctionnalité.
 Cette structure assure que l'application reste maintenable, modulaire et organisée, même lorsqu'elle 
 grandit en taille et en complexité. Elle respecte le principe de responsabilité unique et facilite 
 la réutilisation du code.
+
+
+# Convention commits
+Voici comment faire les commits.
+
+## Commit Message Header
+
+```
+<type>(<scope>): <n° Azure> - <short summary>
+  │       │          │         │
+  │       │          │         └─⫸ Summary in present tense. Not capitalized. No period at the end.
+  │       │          │
+  │       │          └─⫸ Azure Number (exemple 2344)
+  │       │
+  │       └─⫸ Commit Scope: employee|user|admin|etc..
+  │
+  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+```
+
+The `<type>` and `<summary>` fields are mandatory, the `(<scope>)` field is optional.
+
+
+## Type
+
+Must be one of the following:
+
+* **feat**: A new feature
+* **fix**: A bug fix
+* **refactor**: A code change that neither fixes a bug nor adds a feature
+* **test**: Adding missing tests or correcting existing tests
+* **style**: changes to the code that do not affect the meaning
+* **perf**: changes to the code to improve the performance
+* **docs**: Documentation only changes
+* **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+* **ci**: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
+* **chore**: changes for housekeeping (avoiding this will force more meaningful message)
+
+
+## Scope
+The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages).
+
+The following is the list of supported scopes:
+
+* `employee`
+* `user`
+* `admin`
+* `etc..`
+
+Projets :
+* `projet1`
+* `projet2`
+
+## Example de changlog
+
+Comment générer le changlog :
+https://medium.com/jobtome-engineering/how-to-generate-changelog-using-conventional-commits-10be40f5826c
