@@ -1,0 +1,35 @@
+<form *ngIf="!!form" [formGroup]="form">
+  <div *ngFor="let field of fields">
+    <label for="{{ field.name }}}">{{ field.name }}</label>
+    <ng-container *ngIf="field.type !== 'select' && field.type !== 'array'; else dynamicTemplate">
+      <input id="{{ field.name }}}" [type]="field.type" [formControlName]="field.name" />
+      <div *ngIf="form.get(field.name)?.invalid && form.get(field.name)?.touched">
+        <p *ngIf="form.get(field.name)?.hasError('required')">This field is required</p>
+        <p *ngIf="form.get(field.name)?.hasError('email')">Invalid email format</p>
+      </div>
+    </ng-container>
+    <ng-template #dynamicTemplate>
+      <ng-container *ngIf="field.type === 'select'">
+        <select [formControlName]="field.name">
+          <option *ngFor="let option of field.options" [value]="option">{{ option }}</option>
+        </select>
+      </ng-container>
+      <ng-container *ngIf="field.type === 'array'">
+        <div formArrayName="skills">
+          <div *ngFor="let skillGroup of skills.controls; let i = index" [formGroupName]="i">
+            <input formControlName="name" placeholder="Skill Name" />
+            <input formControlName="level" placeholder="Skill Level" />
+            <div *ngIf="skillGroup.get('name')?.invalid && skillGroup.get('name')?.touched">
+              <p *ngIf="skillGroup.get('name')?.hasError('required')">Skill name is required</p>
+            </div>
+            <button type="button" (click)="removeSkill(i)">Remove</button>
+          </div>
+        </div>
+        <button type="button" (click)="addSkill()">Add Skill</button>
+      </ng-container>
+    </ng-template>
+  </div>
+  <button type="submit" [disabled]="!form.valid" (click)="sendData()">Submit</button>
+</form>
+<pre>{{ form.value | json }}</pre>
+<pre>{{ form.valid }}</pre>

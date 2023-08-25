@@ -14,8 +14,7 @@ export const APP_ROUTES: Routes = [
       },
       {
         path: 'formreact',
-        loadComponent: () =>
-          import('./features/formreact/pages/form-react-page/form-react-page.component').then((c) => c.FormReactPageComponent),
+        loadChildren: () => import('./features/formreact/formreact.routes').then((r) => r.FORMREACT_ROUTE),
       },
       {
         path: 'formtempl',

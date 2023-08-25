@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { PersonalInfoForm, PersonalInfoFormData, PersonalInfoFormService } from '../../services/personal-info-form.service';
 
 @Component({
   selector: 'app-form-react-page',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './form-react-page.component.html',
   styleUrls: ['./form-react-page.component.less'],
 })
