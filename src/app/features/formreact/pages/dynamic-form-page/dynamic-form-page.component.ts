@@ -73,7 +73,7 @@ export class DynamicFormPageComponent {
     this.skills.removeAt(index);
   }
 
-  sendData() {
-    this.logger.debug('data vaut ', this.form.getRawValue());
+  updateData() {
+    this.logger.debug('form vaut ', this.form.getRawValue());
   }
 }
