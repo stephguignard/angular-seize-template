@@ -2,17 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
+import { TextComponent } from '../../../../shared/components/form/text/text.component';
 
 @Component({
   selector: 'app-dynamic-form-page',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TextComponent],
   templateUrl: './dynamic-form-page.component.html',
   styleUrls: ['./dynamic-form-page.component.less'],
 })
 export class DynamicFormPageComponent {
   fields = [
-    { name: 'username', type: 'text', value: '', validators: [Validators.required] },
+    { name: 'username', type: 'text', value: 'tata', validators: [Validators.required] },
     { name: 'password', type: 'password', value: '' },
     { name: 'email', type: 'email', value: '', validators: [Validators.required, Validators.email] },
     { name: 'role', type: 'select', value: 'User', options: ['User', 'Admin', 'Guest'] },

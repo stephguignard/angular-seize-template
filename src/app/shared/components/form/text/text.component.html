@@ -1,0 +1,9 @@
+<input [type]="type" [formControl]="inputControl" [readonly]="readonly" />
+<div *ngIf="inputControl.invalid && inputControl.touched">
+  <!-- Pour le validateur d'email -->
+  <span *ngIf="inputControl.hasError('email')">Veuillez entrer un email valide.</span>
+  <!-- Pour le validateur required -->
+  <span *ngIf="inputControl.hasError('required')">Ce champ est obligatoire.</span>
+  <!-- Pour le validateur personnalisé containsTest -->
+  <span *ngIf="inputControl.hasError('containsTest')">La valeur doit contenir le mot "test".</span>
+</div>

@@ -2,16 +2,7 @@
   <div *ngFor="let field of fields">
     <label for="{{ field.name }}}">{{ field.name }}</label>
     <ng-container *ngIf="field.type !== 'select' && field.type !== 'array'; else dynamicTemplate">
-      <ng-container *ngIf="field.type === 'text'"> </ng-container>
-      <ng-container *ngIf="field.type === 'password'"> </ng-container>
-      <ng-container *ngIf="field.type === 'date'"> </ng-container>
-      <ng-container *ngIf="field.type === 'email'"> </ng-container>
-
-      <input id="{{ field.name }}}" [type]="field.type" [formControlName]="field.name" />
-      <div *ngIf="form.get(field.name)?.invalid && form.get(field.name)?.touched">
-        <p *ngIf="form.get(field.name)?.hasError('required')">This field is required</p>
-        <p *ngIf="form.get(field.name)?.hasError('email')">Invalid email format</p>
-      </div>
+      <app-text [type]="field.type" [formControlName]="field.name" [required]="true"></app-text>
     </ng-container>
     <ng-template #dynamicTemplate>
       <ng-container *ngIf="field.type === 'select'">
