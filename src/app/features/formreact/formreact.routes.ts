@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { DynamicFormPageComponent } from './pages/dynamic-form-page/dynamic-form-page.component';
-import { FormReactPageComponent } from './pages/form-react-page/form-react-page.component';
 import { ReactHomeComponent } from './pages/react-home/react-home.component';
 
 export const FORMREACT_ROUTE: Routes = [
@@ -10,11 +8,11 @@ export const FORMREACT_ROUTE: Routes = [
     children: [
       {
         path: 'simple',
-        component: FormReactPageComponent,
+        loadComponent: () => import('./pages/form-react-page/form-react-page.component').then((c) => c.FormReactPageComponent),
       },
       {
         path: 'dynamic',
-        component: DynamicFormPageComponent,
+        loadComponent: () => import('./pages/dynamic-form-page/dynamic-form-page.component').then((c) => c.DynamicFormPageComponent),
       },
     ],
   },
