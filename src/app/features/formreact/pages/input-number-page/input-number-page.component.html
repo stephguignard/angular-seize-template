@@ -1,0 +1,17 @@
+<!-- Composant autonome -->
+<app-input-number [(value)]="standaloneValue"></app-input-number>
+<p>Valeur autonome : {{ standaloneValue }}</p>
+
+<!-- Formulaire réactif -->
+<form [formGroup]="reactiveForm" (submit)="submitReactive()">
+  <app-input-number formControlName="reactiveValue"></app-input-number>
+  <button type="submit">Soumettre réactif</button>
+</form>
+<p>Valeur réactive : {{ reactiveForm.get("reactiveValue")?.value }}</p>
+
+<!-- Formulaire basé sur un template -->
+<form #templateForm="ngForm" (submit)="submitTemplate(templateForm.value)">
+  <app-input-number name="templateValue" [(ngModel)]="templateValue"></app-input-number>
+  <button type="submit">Soumettre template</button>
+</form>
+<p>Valeur template : {{ templateValue }}</p>

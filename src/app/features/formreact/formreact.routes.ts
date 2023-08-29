@@ -14,6 +14,10 @@ export const FORMREACT_ROUTE: Routes = [
         path: 'dynamic',
         loadComponent: () => import('./pages/dynamic-form-page/dynamic-form-page.component').then((c) => c.DynamicFormPageComponent),
       },
+      {
+        path: 'inputnumbertest',
+        loadComponent: () => import('./pages/input-number-page/input-number-page.component').then((c) => c.InputNumberPageComponent),
+      },
     ],
   },
 ];
