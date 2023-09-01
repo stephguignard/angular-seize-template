@@ -48,16 +48,21 @@ src/styles/
 ```
 
 ## Naming conventions
+
 ### Component
+
 To avoid any ambiguity, classes declared at component level should be named in three parts
-* The project prefix
-* The component name
-* The class name
+
+- The project prefix
+- The component name
+- The class name
 
 Example de nom: rbl-entrance-even, rbl-entrance-odd
 
 ### Exemple component
+
 Voici un exemple pour un composant imaginaire dans application emp-angular, ce component s'appelle emp-guignard :
+
 ```
 $emp-guignard-radius: 20px;
 
@@ -73,6 +78,7 @@ $emp-guignard-radius: 20px;
   }
 }
 ```
+
 Lors d'utilisation de variables globales, il faut importer les variables du fichier styles-variables.scss :
 
 ```
@@ -82,10 +88,12 @@ Lors d'utilisation de variables globales, il faut importer les variables du fich
 Il faut au maximum utiliser ces variables afin de ne pas les dupliquer.
 
 ### Exemple de surcharge hiérarchique
+
 In some situations one may prefer to not declare a new class, but rather to override a third-party class for a given component. This can be done
 by declaring the html element hierarchy where the override should apply.
 
 Example:
+
 ```
 emp-guignard-list emp-table .table-striped tr {
   &:nth-of-type(odd){

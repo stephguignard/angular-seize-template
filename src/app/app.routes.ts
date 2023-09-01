@@ -25,6 +25,10 @@ export const APP_ROUTES: Routes = [
         path: 'signal',
         loadChildren: () => import('./features/signal/signal.routes').then((r) => r.SIGNAL_ROUTE),
       },
+      {
+        path: 'modal',
+        loadChildren: () => import('./features/modal/modal.routes').then((r) => r.MODAL_ROUTE),
+      },
     ],
   },
 ];
