@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LoggerTestingModule } from 'ngx-logger/testing';
 
 import { ModalRendererComponent } from './modal-renderer.component';
 
@@ -8,7 +9,7 @@ describe('ModalRendererComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ModalRendererComponent],
+      imports: [ModalRendererComponent, LoggerTestingModule],
     });
     fixture = TestBed.createComponent(ModalRendererComponent);
     component = fixture.componentInstance;
